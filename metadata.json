@@ -1,0 +1,6 @@
+{
+  "name": "EstatePulse - Developer Portal",
+  "description": "Professional real estate customer profiling and project catalog system with lead management.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

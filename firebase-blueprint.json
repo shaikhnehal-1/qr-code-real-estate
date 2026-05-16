@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "Lead": {
+      "title": "Customer Lead",
+      "description": "Details of a customer who submitted an enquiry form.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Full name of the customer" },
+        "contact": { "type": "string", "description": "Phone number" },
+        "email": { "type": "string", "format": "email", "description": "Optional email address" },
+        "projectName": { "type": "string", "description": "Selected project name" },
+        "specifications": { "type": "string", "description": "1BHK, 2BHK, 3BHK, other" },
+        "budget": { "type": "number", "description": "Budget in rupees" },
+        "purpose": { "type": "string", "description": "Investment, Self Use, ROI, Business purpose" },
+        "profession": { "type": "string", "description": "Corporate, Govt, Business, Freelance" },
+        "location": { "type": "string", "description": "Current living location" },
+        "ageBracket": { "type": "string", "description": "Demographic detail: Age range" },
+        "preferredTimeline": { "type": "string", "description": "When they plan to buy/invest" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "contact", "projectName", "specifications", "budget", "purpose", "profession", "location"]
+    },
+    "Project": {
+      "title": "Real Estate Project",
+      "description": "Details of a project managed by the developer.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "status": { "type": "string", "enum": ["Completed", "Ongoing", "Upcoming"] },
+        "type": { "type": "string", "description": "Residential, Commercial, etc." },
+        "location": { "type": "string" },
+        "images": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "status", "location"]
+    }
+  },
+  "firestore": {
+    "leads": {
+      "schema": "Lead",
+      "description": "Collection of customer enquiries"
+    },
+    "projects": {
+      "schema": "Project",
+      "description": "Collection of real estate projects"
+    }
+  }
+}
